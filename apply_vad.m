@@ -1,5 +1,9 @@
-% Example default usage of 'denoise.m'
+% ------------------------------------------------------------------------
+% Copyright (C) 2015 University of Southern California, SAIL, U.S.
 % Author: Maarten Van Segbroeck
+% Mail: maarten@sipi.usc.edu
+% Date: 2015-20-1
+% ------
 
 % set path
 addpath mfiles/
