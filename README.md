@@ -9,7 +9,7 @@ System was developed as part of the RATS (Robust Automated Transcription of Spee
 1. open Matlab
 2. run the script **apply_vad(_path/to/audio_)**: 
 3. a figure will appear that shows the original signal, and VAD labels, given a directory of audio wav files.
-4. to control the accuracy (depending on how noisy the files are), you can play with the parameters p1 and p2
+4. to control the accuracy (depending on how noisy the files are), you can play with the parameters p1 and p2  
 5. additional help 
 
        Apply Voice Activity Detection to all files in a specified audio directory
