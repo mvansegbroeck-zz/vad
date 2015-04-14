@@ -1,7 +1,8 @@
-Voice Activity Detection system
+#Voice Activity Detection system
 
-reference citation:
-Van Segbroeck, Maarten, Andreas Tsiartas, and Shrikanth Narayanan. "A robust frontend for VAD: exploiting contextual, discriminative and spectral cues of human voice." INTERSPEECH. 2013.
+##reference citation:
+
+Van Segbroeck, Maarten, Andreas Tsiartas, and Shrikanth Narayanan. _"A robust frontend for VAD: exploiting contextual, discriminative and spectral cues of human voice."_ INTERSPEECH. 2013.
 
 @inproceedings{van2013robust,
   title={A robust frontend for VAD: exploiting contextual, discriminative and spectral cues of human voice.},
