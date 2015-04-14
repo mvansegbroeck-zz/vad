@@ -14,15 +14,13 @@
 
        Apply Voice Activity Detection to all files in a specified audio directory
 
-       --IN--
-       
-       audiodir: directory of audio files (WAV format)
-       p1: speech/non-speech threshold [default:0.1]
-       p2: speech region smoothing [default:20]
+       --IN--\s
+       audiodir: directory of audio files (WAV format)\s
+       p1: speech/non-speech threshold [default:0.1]\s
+       p2: speech region smoothing [default:20]\s
 
-       --OUT--
-       
-       vadout: VAD labels at frame level (10 ms)
+       --OUT--\s
+       vadout: VAD labels at frame level (10 ms)\s
 
 
 ##Reference citation:
