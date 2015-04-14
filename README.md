@@ -17,9 +17,7 @@
        --IN--
        
        audiodir: directory of audio files (WAV format)
-       
        p1: speech/non-speech threshold [default:0.1]
-       
        p2: speech region smoothing [default:20]
 
        --OUT--
