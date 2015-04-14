@@ -11,6 +11,7 @@
 4. to control the accuracy (depending on how noisy the files are), you can play with the parameters p1 and p2
 
 5. additional help 
+
        Apply Voice Activity Detection to all files in a specified audio directory
 
        --IN--
