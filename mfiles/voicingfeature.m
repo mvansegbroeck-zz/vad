@@ -6,7 +6,7 @@
 
 %% DENOISING OF SPEECH
 % i. removing of the voicing information contained in the signal
-% ii. estimating the noise by minimum statistics of signal with removed voicing 
+% ii. estimating the noise by minimum statistics of signal with removed voicing
 % iii. voicing controlled spectral subtraction of noise from the original signal
 %
 function [vuv,mbvuv,correlogram]=voicingfeature(sam,fs,vThr,vSlope,verbose,dn,p,po)
@@ -21,22 +21,22 @@ function [vuv,mbvuv,correlogram]=voicingfeature(sam,fs,vThr,vSlope,verbose,dn,p,
 % sam_aper: voicing removed signal
 
 % Show progress
-if ~exist('verbose', 'var'), 
+if ~exist('verbose', 'var'),
     verbose=false;
 end
-if ~exist('dn', 'var'), 
+if ~exist('dn', 'var'),
     dn=false;
 end
-if ~exist('vThr', 'var'), 
+if ~exist('vThr', 'var'),
     vThr=0.5;
 end
-if ~exist('vSlope', 'var'), 
+if ~exist('vSlope', 'var'),
     vSlope=0.1;
 end
 
 % Default settings for noise tracking
-if ~exist('p', 'var'), 
-    p = [4 0.2 1.0 1.0 1.0 1.0 0]; 
+if ~exist('p', 'var'),
+    p = [4 0.2 1.0 1.0 1.0 1.0 0];
 end
 vsm = p(1); % size of running window for minimum statistics noise estimation (20)
 nfl = p(2); % noise floor level of aperiodic signal (0.4): lower for low SNR
@@ -47,7 +47,7 @@ rfs = p(6); % noise reduction factor during speech frames (0.5)
 nsa = p(7); % add noise to compensate for introduced non-linear effect (0)
 
 % Default settings for spectral subtraction
-if ~exist('po', 'var'), 
+if ~exist('po', 'var'),
     po=[0.04 0.1 0.02 0.01 0.08 800 4 1.5 0.02 4]';
 end
 tg=po(1); % smoothing time constant for signal power estimate (0.04): high=reverberant, low=musical
@@ -100,13 +100,13 @@ function [p,vuv,mbvuv,correlogram]=remove_voicing(sam,fs,tw,ts,verbose,vThr,vSlo
 if ~exist('fs', 'var')
     fs = 16000;
 end
-if ~exist('tw', 'var'), 
+if ~exist('tw', 'var'),
     tw = 0.025;
 end
-if ~exist('ts', 'var'), 
-    ts = 0.01; 
+if ~exist('ts', 'var'),
+    ts = 0.01;
 end
-if ~exist('verbose', 'var'), 
+if ~exist('verbose', 'var'),
     verbose = true;
 end
 
@@ -137,7 +137,7 @@ return
 %
 function [pMicro,vuv,mbvuv,rfft,p,praw,score]=pitch_estimation(x,fs,vThr,vSlope,dpWidth)
 % --IN--
-% x: windowed and framed signal. One frame per column. 
+% x: windowed and framed signal. One frame per column.
 % fs: sampling frequency
 % dpWidth: number of subharmonic bins (48 per octave) the pitch can change per frame
 % --OUT--
@@ -151,7 +151,7 @@ Nfft=1024;
 if nargin<2,
   fs = 8000;
 end
-if ~exist('dpWidth', 'var'), 
+if ~exist('dpWidth', 'var'),
    dpWidth=4;
 end
 
@@ -175,7 +175,7 @@ i=maxpos;i(rem(maxpos-1,Nbw)==0)=[];
 maxBar(i-1)=0;
 i=maxpos;i(rem(maxpos-1,Nbw)==Nbw-1)=[];
 maxBar(i+1)=0;
-    
+
 % Subtract maxBar from x128 to get relative maxima and surounding points
 relmax = xfft - maxBar;
 
@@ -233,13 +233,13 @@ if nargout>=2,
       i = sub2ind(size(rfft),round(k*Nover*Tsamples)+1,1:T);
       mbvuv(k,:) = rfft(i)./rfft(1,:);
     end
-      
+
     %tGtMat=gammatone_matrix(Nfft,fs,Nfft/2)';
     %subplot 211; imagesc(rfft(1:Nfft/2,500:800),[-0.005 0.005]);axis xy
-    %subplot 212; plot(tGtMat*rfft(1,500:800)); hold on; plot(smooth(rfft(i(500:800))./rfft(1,500:800),5),'r');hold off;axis tight 
+    %subplot 212; plot(tGtMat*rfft(1,500:800)); hold on; plot(smooth(rfft(i(500:800))./rfft(1,500:800),5),'r');hold off;axis tight
 end
 
-%% MODIFIED VITERBI 
+%% MODIFIED VITERBI
 function [cost,path,fi,nActive]=vit_gen(logB,logA,PdfNr,fiInit,beam)
 % --IN--
 % logB: local scores for all Pdfs; size(logB,2)=T
@@ -261,7 +261,7 @@ T=size(logB,2);
 Best=zeros(T,N);
 nActive=N*ones(1,T);
 for t=1:T,
-   [fi,Best(t,:)]=spmax2mex(from,to,fi(from),logB(PdfNr(to),t)+logAval,N);
+   [fi,Best(t,:)]=spmax2(from,to,fi(from),logB(PdfNr(to),t)+logAval,N);
    if nargin>=5,
       sel=fi>max(fi)+beam;
       nActive(t)=sum(sel);
