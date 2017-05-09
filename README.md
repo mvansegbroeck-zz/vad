@@ -1,10 +1,10 @@
-#Voice Activity Detection system
+# Voice Activity Detection system
 
 ## Description
 VAD system based on Deep Neural Networks (DNN) and feature fusion (Gammatone, Gabor, Long-term Spectral Variability and voicing).  
 System was developed as part of the RATS (Robust Automated Transcription of Speech) program of DARPA.
 
-##Instructions:
+## Instructions:
 
 1. open Matlab
 2. run the script **apply_vad(_path/to/audio_)**: 
@@ -23,9 +23,9 @@ System was developed as part of the RATS (Robust Automated Transcription of Spee
        vadout: VAD labels at frame level (10 ms)  
 
 
-##Reference citation:
+## Reference citation:
 
-Van Segbroeck, Maarten, Andreas Tsiartas, and Shrikanth Narayanan. _"A robust frontend for VAD: exploiting contextual, discriminative and spectral cues of human voice."_ INTERSPEECH. 2013.
+**Van Segbroeck, Maarten, Andreas Tsiartas, and Shrikanth Narayanan.** _"A robust frontend for VAD: exploiting contextual, discriminative and spectral cues of human voice."_ INTERSPEECH. 2013.
 
 **bibtex**
 
