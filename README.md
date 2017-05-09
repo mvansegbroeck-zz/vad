@@ -25,7 +25,7 @@ System was developed as part of the RATS (Robust Automated Transcription of Spee
 
 ## Reference citation:
 
-**Van Segbroeck, Maarten, Andreas Tsiartas, and Shrikanth Narayanan.** _"A robust frontend for VAD: exploiting contextual, discriminative and spectral cues of human voice."_ INTERSPEECH. 2013.
+Van Segbroeck, Maarten, Andreas Tsiartas, and Shrikanth Narayanan. _"A robust frontend for VAD: exploiting contextual, discriminative and spectral cues of human voice."_ INTERSPEECH. 2013.
 
 **bibtex**
 
